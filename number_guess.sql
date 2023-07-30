@@ -48,10 +48,10 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.users (
-    username character varying(22) NOT NULL,
     user_id integer NOT NULL,
-    games_played integer,
-    guesses integer
+    username character varying(22) NOT NULL,
+    games_played integer DEFAULT 1 NOT NULL,
+    best_game integer DEFAULT 0 NOT NULL
 );
 
 
@@ -90,16 +90,22 @@ ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.u
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.users VALUES ('Leo', 6, 3, 11);
-INSERT INTO public.users VALUES ('user_1690581366158', 8, 2, 0);
-INSERT INTO public.users VALUES ('user_1690581366159', 7, 5, 0);
+INSERT INTO public.users VALUES (71, 'Matt', 1, 0);
+INSERT INTO public.users VALUES (72, 'User_10', 1, 0);
+INSERT INTO public.users VALUES (73, 'user_1690654706148', 1, 0);
+INSERT INTO public.users VALUES (74, 'user_1690654706147', 1, 0);
+INSERT INTO public.users VALUES (106, 'user_1690732170555', 1, 0);
+INSERT INTO public.users VALUES (107, 'user_1690732170554', 1, 0);
+INSERT INTO public.users VALUES (108, 'Leo', 1, 11);
+INSERT INTO public.users VALUES (109, 'user_1690734017144', 1, 0);
+INSERT INTO public.users VALUES (110, 'user_1690734017143', 1, 0);
 
 
 --
 -- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.users_user_id_seq', 8, true);
+SELECT pg_catalog.setval('public.users_user_id_seq', 110, true);
 
 
 --
